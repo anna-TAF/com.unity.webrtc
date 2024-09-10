@@ -51,8 +51,8 @@ xcodebuild archive \
   -configuration Release \
   -archivePath "$WEBRTC_ARCHIVE_DIR"
 
-rm -rf "$WEBRTC_FRAMEWORK_DIR/webrtc.framework"
-cp -r "$WEBRTC_ARCHIVE_DIR/Products/@rpath/webrtc.framework" "$WEBRTC_FRAMEWORK_DIR/webrtc.framework"
+rm -rf "$WEBRTC_FRAMEWORK_DIR/webrtcUnity.framework"
+cp -r "$WEBRTC_ARCHIVE_DIR/Products/@rpath/webrtcUnity.framework" "$WEBRTC_FRAMEWORK_DIR/webrtcUnity.framework"
 
 # todo(kazuki): The command below combines two libraries for supporting iOS and iOS simulator.
 # But currently this is commented out because the combined binary adds a troublesome task to developer 
