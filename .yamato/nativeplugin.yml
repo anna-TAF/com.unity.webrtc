@@ -31,7 +31,7 @@ build_platforms:
     image: package-ci/macos-12:v4.10.0-1271191
     build_command: BuildScripts~/build_plugin_ios.sh
     build_testrunner_command: BuildScripts~/build_testrunner_ios.sh
-    plugin_path: Runtime/Plugins/iOS/webrtc.framework/**
+    plugin_path: Runtime/Plugins/iOS/webrtcUnity.framework/**
     testrunner_path: WebRTCLibTest
   - name: android
     type: Unity::VM

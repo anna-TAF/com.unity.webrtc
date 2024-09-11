@@ -11,8 +11,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 brew install cmake
 
 # Download webrtc 
-curl -L $LIBWEBRTC_DOWNLOAD_URL > webrtc.zip
-unzip -d $SOLUTION_DIR/webrtc webrtc.zip 
+curl -L $LIBWEBRTC_DOWNLOAD_URL > webrtcUnity.zip
+unzip -d $SOLUTION_DIR/webrtc webrtcUnity.zip 
 
 # Build webrtc Unity plugin 
 cd "$SOLUTION_DIR"
@@ -26,7 +26,7 @@ cmake . \
 xcodebuild \
   -sdk iphonesimulator \
   -arch 'x86_64' \
-  -project build/webrtc.xcodeproj \
+  -project build/webrtcUnity.xcodeproj \
   -target WebRTCLib \
   -configuration Release
 
@@ -34,20 +34,20 @@ xcodebuild archive \
   -sdk iphonesimulator \
   -arch 'x86_64' \
   -scheme WebRTCPlugin \
-  -project build/webrtc.xcodeproj \
+  -project build/webrtcUnity.xcodeproj \
   -configuration Release \
   -archivePath "$WEBRTC_SIM_ARCHIVE_DIR"
 
 xcodebuild \
   -sdk iphoneos \
-  -project build/webrtc.xcodeproj \
+  -project build/webrtcUnity.xcodeproj \
   -target WebRTCLib \
   -configuration Release
 
 xcodebuild archive \
   -sdk iphoneos \
   -scheme WebRTCPlugin \
-  -project build/webrtc.xcodeproj \
+  -project build/webrtcUnity.xcodeproj \
   -configuration Release \
   -archivePath "$WEBRTC_ARCHIVE_DIR"
 
